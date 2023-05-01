@@ -1,0 +1,1 @@
+{"mappings":"oeAAAA,EAAA,S","sources":["src/shopping.js"],"sourcesContent":["import './js/header';\nimport './js/mobile-menu';\nimport './js/dark-theme';\nimport './js/foundations';\n"],"names":["parcelRequire"],"version":3,"file":"shoppinglist.104e6d1c.js.map"}
