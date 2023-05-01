@@ -1,6 +1,7 @@
 const linksEl = document.querySelectorAll('.header__nav-link');
 
 linksEl.forEach(link => {
+  console.log(window.location.pathname);
   if (window.location.pathname === '/') {
     return;
   }

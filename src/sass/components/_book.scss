@@ -1,0 +1,35 @@
+.book__img-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.book__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.book__title {
+  font-weight: 700;
+  line-height: calc(18 / 16);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--main-text-color);
+  transition: color 250ms linear;
+
+  .dark & {
+    color: var(--main-text-color-dark-bg);
+  }
+}
+.book__author,
+.book__category {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: -0.04em;
+  font-style: italic;
+  color: var(--secondary-title-color);
+}
+.book__description {
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+}
