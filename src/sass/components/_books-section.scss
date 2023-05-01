@@ -113,8 +113,8 @@
 
   transition: opacity 250ms linear, transform 250ms linear;
 
-  .book:hover &,
-  .book:focus & {
+  .books-list__item:hover &,
+  .books-list__item:focus & {
     opacity: 1;
     transform: translateY(0);
   }
