@@ -1,6 +1,6 @@
 import { getTopBooks } from './get-top-books';
 import { createBookMarkup } from './create-book-markup';
-// import { showSpinner, hideSpinner } from './loader';
+import { showSpinner, hideSpinner } from './loader';
 
 const booksSectionEl = document.querySelector('.books-section');
 const allCategories = document.querySelector('[data-value="all-categories"]');
@@ -15,7 +15,7 @@ mediaValue.addEventListener('change', getAllBooks);
 allCategories.addEventListener('click', getAllBooks);
 
 async function getAllBooks() {
-  // showSpinner();
+  showSpinner();
 
   try {
     const response = await getTopBooks();
@@ -52,7 +52,7 @@ async function getAllBooks() {
     const sectionMarkup = createSectionMarkup(items.join(' '));
 
     booksSectionEl.innerHTML = sectionMarkup;
-    // hideSpinner();
+    hideSpinner();
   } catch (error) {
     console.log(error);
   }

@@ -1,6 +1,6 @@
 import { getBookById } from './get-book-by-id';
 import iconsSprite from '../images/icons.svg';
-// import { showSpinner, hideSpinner } from './loader';
+import { showSpinner, hideSpinner } from './loader';
 import { createTradingPlatformsMarkup } from './trading-platforms-markup';
 import {
   saveToStorage,
@@ -21,7 +21,7 @@ async function openModal(event) {
   if (!event.target.dataset.book) {
     return;
   }
-  // showSpinner();
+  showSpinner();
 
   if (loadFromStorage(STORAGE_KEY) !== undefined) {
     bookList = loadFromStorage(STORAGE_KEY);
@@ -35,7 +35,7 @@ async function openModal(event) {
     const modalMarkup = createModalMarkup(book);
 
     backdropEl.innerHTML = modalMarkup;
-    // hideSpinner();
+    hideSpinner();
     backdropEl.classList.remove('hidden-modal');
     body.style.marginRight = `${getScrollbarWidth()}px`;
     body.classList.add('noScroll');

@@ -1,7 +1,7 @@
 import { getBooksByCategory } from './get-books-by-category';
 import { createBookMarkup } from './create-book-markup';
 import { createMessageMarkup } from './message-markup';
-// import { showSpinner, hideSpinner } from './loader';
+import { showSpinner, hideSpinner } from './loader';
 
 const booksSectionEl = document.querySelector('.books-section');
 const mainEl = document.querySelector('main');
@@ -19,7 +19,7 @@ async function showBooksByCategory(event) {
     return;
   }
 
-  // showSpinner();
+  showSpinner();
 
   try {
     const response = await getBooksByCategory(selectedCategory);
@@ -30,7 +30,7 @@ async function showBooksByCategory(event) {
         'There are no books in this category'
       );
       booksSectionEl.innerHTML = sectionMarkup;
-      // hideSpinner();
+      hideSpinner();
       return;
     }
 
@@ -39,7 +39,7 @@ async function showBooksByCategory(event) {
     const sectionMarkup = createSectionMarkup(selectedCategory, books);
 
     booksSectionEl.innerHTML = sectionMarkup;
-    // hideSpinner();
+    hideSpinner();
     scrollToBookCategory();
   } catch (error) {
     console.log(error);
