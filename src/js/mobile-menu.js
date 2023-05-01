@@ -11,7 +11,10 @@ function toggleMenu() {
 const linksEl = document.querySelectorAll('.mobile__nav-link');
 
 linksEl.forEach(link => {
-  if (window.location.pathname === '/') {
+  if (
+    window.location.pathname === '/' ||
+    window.location.pathname === '/book-project/'
+  ) {
     return;
   }
   if (window.location.pathname === link.getAttribute('href')) {

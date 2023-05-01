@@ -1,8 +1,10 @@
 const linksEl = document.querySelectorAll('.header__nav-link');
 
 linksEl.forEach(link => {
-  console.log(window.location.pathname);
-  if (window.location.pathname === '/') {
+  if (
+    window.location.pathname === '/' ||
+    window.location.pathname === '/book-project/'
+  ) {
     return;
   }
   if (window.location.pathname === link.getAttribute('href')) {
