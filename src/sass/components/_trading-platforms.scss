@@ -1,0 +1,28 @@
+.trading-platform__list {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.trading-platform__item {
+}
+.trading-platform__link {
+}
+.trading-platform__logo {
+  filter: grayscale(100%);
+  transition: filter 250ms linear;
+
+  &:hover,
+  &:focus {
+    filter: grayscale(100%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3));
+  }
+  .dark & {
+    filter: grayscale(90%) invert(90%);
+
+    &:hover,
+    &:focus {
+      filter: grayscale(90%) invert(90%)
+        drop-shadow(0px 3px 3px rgba(243, 243, 243, 0.3));
+    }
+  }
+}
