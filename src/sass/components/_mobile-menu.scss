@@ -1,0 +1,118 @@
+.menu-toggle {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.menu-toggle__icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  stroke: var(--main-text-color);
+  transition: stroke 250ms linear;
+
+  .menu-toggle:hover & {
+    stroke: var(--accent-color);
+  }
+
+  .dark & {
+    stroke: var(--main-text-color-dark-bg);
+  }
+}
+.menu-toggle__icon-open {
+  body.noScroll & {
+    stroke: transparent;
+  }
+}
+.menu-toggle__icon-close {
+  transition: stroke 250ms linear;
+  body & {
+    stroke: transparent;
+  }
+  body.noScroll & {
+    stroke: var(--main-text-color);
+  }
+  body.noScroll.dark & {
+    stroke: var(--main-text-color-dark-bg);
+  }
+  body.noScroll .menu-toggle:hover & {
+    stroke: var(--accent-color);
+  }
+}
+.mobile-menu {
+  position: fixed;
+  z-index: var(--mobile-menu);
+  top: 0;
+  right: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--accent-color);
+
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 300ms linear, visibility 300ms linear;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &::after {
+    z-index: var(--mobile-menu-img);
+    content: ' ';
+    position: absolute;
+    left: -14%;
+    bottom: -10%;
+
+    width: 140%;
+    height: 53%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/mobile-menu/img_@1x.png');
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      & {
+        background-image: url('../images/mobile-menu/img_@2x.png');
+      }
+    }
+  }
+}
+
+.mobile-menu__container {
+  padding-top: 200px;
+}
+.mobile__nav-list {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mobile__nav-item {
+}
+.mobile__nav-link {
+  padding: 0;
+
+  &.current-link {
+    padding: 7 16px;
+  }
+}
