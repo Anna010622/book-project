@@ -20,6 +20,10 @@
   }
 }
 .categories__link {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  text-align: start;
   font-size: 16px;
   line-height: calc(18 / 16);
   letter-spacing: -0.02em;
