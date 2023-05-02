@@ -1,0 +1,35 @@
+.scroll-up-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  z-index: 20;
+  right: 10px;
+  bottom: 10px;
+
+  border: none;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+
+  background-color: var(--accent-color);
+  cursor: pointer;
+
+  transition: transform 250ms linear, opacity 250ms linear, outline 300ms linear;
+
+  &:hover,
+  &:focus {
+    outline: 5px solid rgba(79, 46, 232, 0.3);
+  }
+}
+.invisible {
+  transition: transform 250ms linear, opacity 250ms linear,
+    outline 2000ms linear;
+  opacity: 0;
+  transform: translateY(+100%);
+}
+
+.scroll-up-btn__svg {
+  fill: var(--main-text-color-dark-bg);
+}
